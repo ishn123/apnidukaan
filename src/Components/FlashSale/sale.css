@@ -1,0 +1,19 @@
+.flash-sale-wrapper{
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 14;
+    
+}
+.image-wrapper{
+    background-image: url("../../assets/fs.png");
+    border: 2px solid white;
+    height: 300px;
+    width: 300px;
+    background-size: contain;
+    text-align: right;
+}

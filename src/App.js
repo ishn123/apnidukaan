@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Navbar from './Components/Navigation/Navbar';
+import CategoryCard from './Components/ProductCard/CategoryCard';
+import Disinfectants from './Pages/Disinfectants';
+import Home from './Components/Home/Home';
+import Footer from './Components/Footer/Footer';
+import Category from './Components/Category/Category';
+import FlashSale from './Components/FlashSale/FlashSale';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path='/' Component={Home}>
+        </Route>
+        <Route path='/disinfectants' Component={Disinfectants}></Route>
+        <Route path='/category' Component={Category}></Route>
+      </Routes>
+      <FlashSale></FlashSale>
+      <Footer></Footer>
+    </>
   );
 }
 

@@ -1,0 +1,20 @@
+.disinfectants-wrapper{
+    width: 100%;
+    padding: 30px;
+    font-size: var(--my-font);
+}
+
+.disinfectants-catergory-with-title{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.catergory-card-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.title-page{
+    padding: 10px;
+}

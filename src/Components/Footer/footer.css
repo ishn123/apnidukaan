@@ -1,0 +1,25 @@
+.footer-wrapper{
+    padding: 60px 40px 140px;
+}
+.about-comp-wrapper p{
+    font-size: clamp(0.875rem, 0.875rem + (1vw - 0.2rem) * 0.037, 0.9rem);
+    font-weight: bold;
+}
+li{
+    list-style: none;
+}
+.about-comp-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.left-about{
+    display: flex;
+    gap: 20px;
+}
+.resource>div>p,.company>div>p{
+    font-weight: 200;
+
+}
+.resource>div>p:nth-child(2){
+    display: inline;
+}

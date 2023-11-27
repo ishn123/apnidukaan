@@ -1,0 +1,23 @@
+.product-card-wrapper{
+    background-color: #fef4ee !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    font-size: var(--my-font);
+    border-radius: 15px;
+    width: 20%;
+    gap: 4;
+    cursor: pointer;
+}
+.featured-image{
+    width: 120px;
+    height: 120px;
+
+}
+.product-item{
+    padding: 20px;
+}
+.product-about{
+    font-size: medium;
+}
