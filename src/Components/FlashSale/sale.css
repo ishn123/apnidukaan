@@ -2,12 +2,45 @@
     position: fixed;
     margin-left: auto;
     margin-right: auto;
-    top: 40%;
+  
+    top: 0;
     width: 100%;
+    flex-direction: column;
     display: flex;
+    align-items: center;
+    height: 100vh;
     justify-content: center;
     z-index: 14;
     
+}
+.span-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.Timer-span{
+    border-radius: 4px;
+    background-color: #9993936e;
+    padding: 10px;
+    font-size: x-large;
+    font-family: cursive;
+}
+.Countdown-wrapper{
+    width: 303.2px;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    gap: 20px;
+    flex-direction: column;
+}
+.content{
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(255, 73, 73);
+    font-family: cursive;
 }
 .image-wrapper{
     background-image: url("../../assets/fs.png");

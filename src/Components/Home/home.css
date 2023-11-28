@@ -27,7 +27,9 @@
 .brands-wrapper>p {
     font-weight: bold;
 }
-
+.brands-wrapper{
+    margin-top: 50px;
+}
 .hero-about {
     text-align: center;
 }
@@ -49,9 +51,11 @@
     display: flex;
     justify-content: center;
 }
-
+#here{
+  padding-top: 110px;
+}
 .brandimage-items {
-    padding: 40px;
+    padding: 20px;
 }
 
 .why-header>h2 {
@@ -143,19 +147,27 @@
     flex-wrap: wrap;
 }
 
-
+#here>h1{
+margin-left: auto;
+margin-right: auto;
+width: fit-content;
+}
 
 .sale-box-wrapper {
     background-color: rgb(254, 244, 238);
     border-radius: 20px;
-    padding: 60px;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    width: 85%;
+    width:65%;
 }
-
+@media only screen and (max-width: 600px){
+    .sale-box-wrapper {
+        width: 85%;
+    }
+}
 .product-sale-buynow{
     border-radius: 100px;
     padding-right: 30px;
@@ -184,6 +196,9 @@
 .product-on-sale-img-cont{
     display: flex;
     flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
 @media screen and (max-width: 750px) {
     .product-on-sale-img-cont>img{

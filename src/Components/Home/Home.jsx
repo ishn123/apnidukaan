@@ -9,8 +9,9 @@ import catlog from "../../assets/catlog.png";
 import uf from "../../assets/uf.png"
 import yipee from "../../assets/yipee.jpeg";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -33,16 +34,24 @@ const Home = () => {
                 <p>Brands we work with</p>
                 <div className="list-brands">
                     <div className="brandimage-items">
-                        <img src={rb} height="120px" width="200px"></img>
+                        <LazyLoadImage src={rb} height={120} width={200} effect='blur' wrapperProps={{
+                            style: { transitionDelay: "1s" },
+                        }} />
                     </div>
                     <div className="brandimage-items">
-                        <img src={emami} height="100px" width="110px"></img>
+                        <LazyLoadImage src={emami} height={100} width={110} effect='blur' wrapperProps={{
+                            style: { transitionDelay: "1s" },
+                        }} />
                     </div>
                     <div className="brandimage-items">
-                        <img src={itc} height="100px" width="100px"></img>
+                        <LazyLoadImage src={itc} height={100} width={100} effect='blur' wrapperProps={{
+                            style: { transitionDelay: "1s" },
+                        }} />
                     </div>
                     <div className="brandimage-items">
-                        <img src={patanjali} height="100px" width="400px"></img>
+                        <LazyLoadImage src={patanjali} height={100} width={200} effect='blur' wrapperProps={{
+                            style: { transitionDelay: "1s" },
+                        }} />
                     </div>
                 </div>
             </div>
@@ -99,69 +108,171 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <div id='here' name="here">
+               <h1>Sale</h1>
+                <Swiper
 
+                    modules={[Navigation, Pagination, A11y, Autoplay]}
+                    loop={true}
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    pagination={{ clickable: true }}
+                    speed={1000}
+                    draggable
+                    autoplay={{
+                        delay: 1500,
+                        disableOnInteraction: false
+                    }}
 
-            <Swiper
+                >
+                    <SwiperSlide>
+                        <div className="sale-box-wrapper">
+                            <div className="product-on-sale-desc">
+                                <div className="product-title-wrapper">
+                                    <h2>Yipee-100gm</h2>
+                                </div>
+                                <div className="product-sale-desc">
+                                    <p>Indulge in the delicious world of ITC Yippee Noodles – the perfect blend of taste, convenience, and quality. Crafted with care, these instant noodles bring a delightful twist to your everyday meals.
 
-                modules={[Navigation, Pagination, A11y]}
-                loop={true}
-                spaceBetween={50}
-                slidesPerView={1}
-                pagination={{clickable:true}}
-                speed={1000}
-                draggable
-                autoplay={{delay:1000}}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
-               
-            >
-                <SwiperSlide>
-                    <div className="sale-box-wrapper">
-                        <div className="product-on-sale-desc">
-                            <div className="product-title-wrapper">
-                                <h2>Yipee-100gm</h2>
+                                    </p>
+                                </div>
+                                <div className="product-sale-buynow">
+                                    <div className="buy-now">Buy Now</div>
+                                </div>
                             </div>
-                            <div className="product-sale-desc">
-                                <p>Indulge in the delicious world of ITC Yippee Noodles – the perfect blend of taste, convenience, and quality. Crafted with care, these instant noodles bring a delightful twist to your everyday meals.
-
-                                </p>
-                            </div>
-                            <div className="product-sale-buynow">
-                                <div className="buy-now">Buy Now</div>
-                            </div>
-                        </div>
 
 
-                        <div className="product-on-sale-img-cont">
-                            <img src={yipee} height="400px" width="400px"></img>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="sale-box-wrapper">
-                        <div className="product-on-sale-desc">
-                            <div className="product-title-wrapper">
-                                <h2>Yipee-100gm</h2>
-                            </div>
-                            <div className="product-sale-desc">
-                                <p>Indulge in the delicious world of ITC Yippee Noodles – the perfect blend of taste, convenience, and quality. Crafted with care, these instant noodles bring a delightful twist to your everyday meals.
-
-                                </p>
-                            </div>
-                            <div className="product-sale-buynow">
-                                <div className="buy-now">Buy Now</div>
+                            <div className="product-on-sale-img-cont">
+                                <LazyLoadImage src={yipee} height={300} width={300} effect='blur' wrapperProps={{
+                                    style: { transitionDelay: "1s" },
+                                }} />
                             </div>
                         </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="sale-box-wrapper">
+                            <div className="product-on-sale-desc">
+                                <div className="product-title-wrapper">
+                                    <h2>Yipee-100gm</h2>
+                                </div>
+                                <div className="product-sale-desc">
+                                    <p>Indulge in the delicious world of ITC Yippee Noodles – the perfect blend of taste, convenience, and quality. Crafted with care, these instant noodles bring a delightful twist to your everyday meals.
+
+                                    </p>
+                                </div>
+                                <div className="product-sale-buynow">
+                                    <div className="buy-now">Buy Now</div>
+                                </div>
+                            </div>
 
 
-                        <div className="product-on-sale-img-cont">
-                            <img src={yipee} height="400px" width="400px"></img>
+                            <div className="product-on-sale-img-cont">
+                                <LazyLoadImage src={yipee} height={300} width={300} effect='blur' wrapperProps={{
+                                    style: { transitionDelay: "1s" },
+                                }} />
+                            </div>
                         </div>
-                    </div>
-                </SwiperSlide>
-                
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="sale-box-wrapper">
+                            <div className="product-on-sale-desc">
+                                <div className="product-title-wrapper">
+                                    <h2>Yipee-100gm</h2>
+                                </div>
+                                <div className="product-sale-desc">
+                                    <p>Indulge in the delicious world of ITC Yippee Noodles – the perfect blend of taste, convenience, and quality. Crafted with care, these instant noodles bring a delightful twist to your everyday meals.
 
-            </Swiper>
+                                    </p>
+                                </div>
+                                <div className="product-sale-buynow">
+                                    <div className="buy-now">Buy Now</div>
+                                </div>
+                            </div>
+
+
+                            <div className="product-on-sale-img-cont">
+                                <LazyLoadImage src={yipee} height={300} width={300} effect='blur' wrapperProps={{
+                                    style: { transitionDelay: "1s" },
+                                }} />
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="sale-box-wrapper">
+                            <div className="product-on-sale-desc">
+                                <div className="product-title-wrapper">
+                                    <h2>Yipee-100gm</h2>
+                                </div>
+                                <div className="product-sale-desc">
+                                    <p>Indulge in the delicious world of ITC Yippee Noodles – the perfect blend of taste, convenience, and quality. Crafted with care, these instant noodles bring a delightful twist to your everyday meals.
+
+                                    </p>
+                                </div>
+                                <div className="product-sale-buynow">
+                                    <div className="buy-now">Buy Now</div>
+                                </div>
+                            </div>
+
+
+                            <div className="product-on-sale-img-cont">
+                                <LazyLoadImage src={yipee} height={300} width={300} effect='blur' wrapperProps={{
+                                    style: { transitionDelay: "1s" },
+                                }} />
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="sale-box-wrapper">
+                            <div className="product-on-sale-desc">
+                                <div className="product-title-wrapper">
+                                    <h2>Yipee-100gm</h2>
+                                </div>
+                                <div className="product-sale-desc">
+                                    <p>Indulge in the delicious world of ITC Yippee Noodles – the perfect blend of taste, convenience, and quality. Crafted with care, these instant noodles bring a delightful twist to your everyday meals.
+
+                                    </p>
+                                </div>
+                                <div className="product-sale-buynow">
+                                    <div className="buy-now">Buy Now</div>
+                                </div>
+                            </div>
+
+
+                            <div className="product-on-sale-img-cont">
+                                <LazyLoadImage src={yipee} height={300} width={300} effect='blur' wrapperProps={{
+                                    style: { transitionDelay: "1s" },
+                                }} />
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="sale-box-wrapper">
+                            <div className="product-on-sale-desc">
+                                <div className="product-title-wrapper">
+                                    <h2>Yipee-100gm</h2>
+                                </div>
+                                <div className="product-sale-desc">
+                                    <p>Indulge in the delicious world of ITC Yippee Noodles – the perfect blend of taste, convenience, and quality. Crafted with care, these instant noodles bring a delightful twist to your everyday meals.
+
+                                    </p>
+                                </div>
+                                <div className="product-sale-buynow">
+                                    <div className="buy-now">Buy Now</div>
+                                </div>
+                            </div>
+
+
+                            <div className="product-on-sale-img-cont">
+                                <LazyLoadImage src={yipee} height={300} width={300} effect='blur' wrapperProps={{
+                                    style: { transitionDelay: "1s" },
+                                }} />
+                            </div>
+                        </div>
+                    </SwiperSlide>
+
+                      
+                </Swiper>
+            </div>
         </>
     )
 }
