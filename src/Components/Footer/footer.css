@@ -1,5 +1,5 @@
 .footer-wrapper{
-    padding: 60px 40px 140px;
+    padding: 60px 40px 60px;
 }
 .about-comp-wrapper p{
     font-size: clamp(0.875rem, 0.875rem + (1vw - 0.2rem) * 0.037, 0.9rem);

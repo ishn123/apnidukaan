@@ -6,7 +6,7 @@
     align-items:center;
     font-size: var(--my-font);
     border-radius: 15px;
-    width: 20%;
+   width: 300px;
     gap: 4;
     cursor: pointer;
 }

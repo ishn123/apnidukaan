@@ -1,8 +1,8 @@
 import React from 'react'
 import "./card.css";
 import { useNavigate } from 'react-router-dom';
-
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 const CategoryCard = ({title,img,about}) => {
    const navigate = useNavigate();
    const urlSearch = new URLSearchParams();
@@ -17,7 +17,9 @@ const CategoryCard = ({title,img,about}) => {
             {title}
         </div>
         <div className="featured-image product-item">
-            <img src={img} width="120px" height="120px"alt='product'></img>
+          <LazyLoadImage src={img} width={120} height={120} alt='product' effect='blur'   wrapperProps={{
+        style: {transitionDelay: "1s"},
+    }}/>
         </div>
         <div className="product-about product-item">
             {about}
