@@ -7,9 +7,12 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Button from "@material-ui/core/Button";
+import { useContext } from 'react';
+import { cartContext } from '../../ContextProvider/CartContext';
 
 
-const Navbar = ({itemCount}) => {
+const Navbar = () => {
+    const {itemcount:itemCount} = useContext(cartContext)
     const navigate = useNavigate();
     const Menu = useRef();
     const showMenu = () => {

@@ -9,6 +9,7 @@ import Category from './Components/Category/Category';
 import FlashSale from './Components/FlashSale/FlashSale';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import CartContext from './ContextProvider/CartContext';
 
 function App() {
   const initialTime = 2 * 60 * 60;
@@ -30,19 +31,22 @@ function App() {
 
   }, []);
 
-  const [itemCount, setItemCount] = useState(0);
   return (
     <>
-      <Navbar itemCount={itemCount}></Navbar>
-      <Routes>
-        <Route path='/' Component={Home}>
-        </Route>
-        <Route path='/disinfectants' element={<Disinfectants/>}></Route>
-        <Route path='/category' element={<Category  itemCount={itemCount} setItemCount={setItemCount}/>}></Route>
-      </Routes>
-      <FlashSale time={time}></FlashSale>
-      <Footer></Footer>
+      <CartContext>
+        <Navbar></Navbar>
+        <Routes>
+          <Route path='/' Component={Home}>
+          </Route>
+          <Route path='/disinfectants' element={<Disinfectants />}></Route>
+          <Route path='/category' element={<Category />}></Route>
+        </Routes>
+        <FlashSale time={time}></FlashSale>
+        <Footer></Footer>
+      </CartContext>
     </>
+
+
   );
 }
 
