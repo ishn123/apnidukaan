@@ -10,7 +10,7 @@ import FlashSale from './Components/FlashSale/FlashSale';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import CartContext from './ContextProvider/CartContext';
-
+import Admin from './Components/Admin/Admin';
 function App() {
   const initialTime = 2 * 60 * 60;
   const [time, setTime] = useState(initialTime);
@@ -38,6 +38,7 @@ function App() {
         <Routes>
           <Route path='/' Component={Home}>
           </Route>
+          <Route path='/aahji' Component={Admin}></Route>
           <Route path='/disinfectants' element={<Disinfectants />}></Route>
           <Route path='/category' element={<Category />}></Route>
         </Routes>
