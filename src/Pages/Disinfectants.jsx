@@ -40,7 +40,7 @@ const Disinfectants = () => {
                 {
                     
                     category.map((ele)=>{return(
-                        <CategoryCard title={ele.title} img={ele.img} about={ele.desc}></CategoryCard>
+                        <CategoryCard title={ele.title} img={ele.img} about={ele.desc} ></CategoryCard>
                     )})
                 }
             </div>

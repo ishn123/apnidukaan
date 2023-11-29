@@ -30,14 +30,15 @@ function App() {
 
   }, []);
 
+  const [itemCount, setItemCount] = useState(0);
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar itemCount={itemCount}></Navbar>
       <Routes>
         <Route path='/' Component={Home}>
         </Route>
-        <Route path='/disinfectants' Component={Disinfectants}></Route>
-        <Route path='/category' Component={Category}></Route>
+        <Route path='/disinfectants' element={<Disinfectants/>}></Route>
+        <Route path='/category' element={<Category  itemCount={itemCount} setItemCount={setItemCount}/>}></Route>
       </Routes>
       <FlashSale time={time}></FlashSale>
       <Footer></Footer>

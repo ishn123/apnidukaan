@@ -17,7 +17,7 @@ const CategoryCard = ({title,img,about}) => {
             {title}
         </div>
         <div className="featured-image product-item">
-          <LazyLoadImage src={img} width={120} height={120} alt='product' effect='blur'   wrapperProps={{
+          <LazyLoadImage src={img} width={120} height={120} alt='product' effect='blur' wrapperProps={{
         style: {transitionDelay: "1s"},
     }}/>
         </div>
