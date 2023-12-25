@@ -19,3 +19,20 @@
 .title-page{
     padding: 10px;
 }
+.food-items-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.form{
+    padding: 20px;
+    background-color: white;
+    width: 80%;
+    border-radius: 10px;
+}

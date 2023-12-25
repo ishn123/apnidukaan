@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import "./home.css";
 import patanjali from "../../assets/patanjali.png";
 import emami from "../../assets/emami.png";
@@ -17,11 +17,30 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import "swiper/css/autoplay";
-
+import FlashSale from '../FlashSale/FlashSale';
 
 const Home = () => {
+    const initialTime = 2 * 60 * 60;
+  const [time, setTime] = useState(initialTime);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime((prevTime) => {
+        if (prevTime === 0) {
+          clearInterval(timer);
+          alert('Countdown completed!');
+          return prevTime;
+        }
+        return prevTime - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+
+  }, []);
     return (
         <>
+
             <div className="hero-wrapper">
                 <div className="hero-banner-title">
                     <h2>Manage your Products easily.</h2>
@@ -137,7 +156,7 @@ const Home = () => {
                                     </p>
                                 </div>
                                 <div className="product-sale-buynow">
-                                    <div className="buy-now">Buy Now</div>
+                                    <div className="buy-now-home">Buy Now</div>
                                 </div>
                             </div>
 
@@ -161,7 +180,7 @@ const Home = () => {
                                     </p>
                                 </div>
                                 <div className="product-sale-buynow">
-                                    <div className="buy-now">Buy Now</div>
+                                    <div className="buy-now-home">Buy Now</div>
                                 </div>
                             </div>
 
@@ -185,7 +204,7 @@ const Home = () => {
                                     </p>
                                 </div>
                                 <div className="product-sale-buynow">
-                                    <div className="buy-now">Buy Now</div>
+                                    <div className="buy-now-home">Buy Now</div>
                                 </div>
                             </div>
 
@@ -209,7 +228,7 @@ const Home = () => {
                                     </p>
                                 </div>
                                 <div className="product-sale-buynow">
-                                    <div className="buy-now">Buy Now</div>
+                                    <div className="buy-now-home">Buy Now</div>
                                 </div>
                             </div>
 
@@ -233,7 +252,7 @@ const Home = () => {
                                     </p>
                                 </div>
                                 <div className="product-sale-buynow">
-                                    <div className="buy-now">Buy Now</div>
+                                    <div className="buy-now-home">Buy Now</div>
                                 </div>
                             </div>
 
@@ -257,7 +276,7 @@ const Home = () => {
                                     </p>
                                 </div>
                                 <div className="product-sale-buynow">
-                                    <div className="buy-now">Buy Now</div>
+                                    <div className="buy-now-home">Buy Now</div>
                                 </div>
                             </div>
 
@@ -273,6 +292,7 @@ const Home = () => {
                       
                 </Swiper>
             </div>
+            <FlashSale time={time}></FlashSale>
         </>
     )
 }

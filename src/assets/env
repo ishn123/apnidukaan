@@ -1,0 +1,2 @@
+CONN=mongodb+srv://gotuffer:kawJ1sujd2ykcFkE@cluster0.lnfpzkp.mongodb.net/
+JWT_SECRET=my-32-character-ultra-secure-and-ultra-long-secret

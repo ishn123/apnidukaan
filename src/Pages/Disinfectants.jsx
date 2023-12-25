@@ -8,25 +8,29 @@ import CategoryCard from '../Components/ProductCard/CategoryCard';
 const Disinfectants = () => {
     const category = [{
         
-        title:"Dettol",
+        title:"Antiseptics or \nHandwash",
+        stitle:"dettol",
         img:dettol,
         desc:"This category includes all sub products of dettol including handwash,soap,sanitizers etc."
     },
     {
         
-        title:"Savlon",
+        title:"MosquitoRepellent",
+        stitle:"mosquito",
         img:savlon,
         desc:"This category includes all sub products of savlon including handwash,soap,sanitizers etc."
     },
     {
         
-        title:"harpic",
+        title:"Harpic",
+        stitle:"harpic",
         img:harpic,
         desc:"This category includes all sub products of harpic including bathroom, toilet cleaner etc."
     },
     {
         
         title:"lizol",
+        stitle:"lizol",
         img:lizol,
         desc:"This category includes all sub products of lizol including different variants."
     }
@@ -39,8 +43,8 @@ const Disinfectants = () => {
             <div className="catergory-card-wrapper">
                 {
                     
-                    category.map((ele)=>{return(
-                        <CategoryCard title={ele.title} img={ele.img} about={ele.desc} ></CategoryCard>
+                    category.map((ele,idx)=>{return(
+                        <CategoryCard key={idx} id={Date.now()} title={ele.stitle} img={ele.img} about={ele.desc} ></CategoryCard>
                     )})
                 }
             </div>

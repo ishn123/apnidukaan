@@ -1,0 +1,25 @@
+.checkout-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+.total-price-show{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    border-radius: 10px;
+    align-items: center;
+}
+.total-price-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.arrow-proceed{
+    cursor: pointer;
+}

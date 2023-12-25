@@ -12,7 +12,7 @@ import { cartContext } from '../../ContextProvider/CartContext';
 
 
 const Navbar = () => {
-    const {itemcount:itemCount} = useContext(cartContext)
+    const { bag } = useContext(cartContext)
     const navigate = useNavigate();
     const Menu = useRef();
     const showMenu = () => {
@@ -27,21 +27,23 @@ const Navbar = () => {
     return (
         <div className="nav-wrapper">
             <div className="nav-bar">
-                <div className="logo-text-container" onClick={()=>navigate("/")}>
+                <div className="logo-text-container" onClick={() => navigate("/")}>
                     <div className="logo"></div>
                     <div className="logo-text-title">
                         ApniDukaan
                     </div>
                 </div>
                 <div className="nav-items">
-                    <div className="item-nav" onClick={()=>navigate("/disinfectants")}>Disinfectants</div>
-                    <div className="item-nav">Food Items</div>
-                    <div className="item-nav">Cosmetics</div>
+                    <div className="item-nav" onClick={() => navigate("/disinfectants")}>Disinfectants</div>
+                    <div className="item-nav" onClick={()=>navigate("/fooditems")}>Food Items</div>
+                    <div className="item-nav" onClick={() => navigate("/cosmetics")}>Cosmetics</div>
                     <div className="item-nav">About</div>
                 </div>
-                <Badge color="secondary" badgeContent={itemCount}>
-                    <ShoppingCartIcon />
-                </Badge>
+                <div onClick={()=>navigate("/checkout")}>
+                    <Badge color="secondary" badgeContent={bag.length}>
+                        <ShoppingCartIcon />
+                    </Badge>
+                </div>
                 <div className="menu-icon" onClick={() => showMenu()}>
                     <div className="menu-icon-img">
                         <img src={menu} width="24px" height="24px" alt="menu icon" />
@@ -52,7 +54,7 @@ const Navbar = () => {
                         <div className="cross-icon menu-container-item" onClick={() => closeMenu()}>
                             <img src={cross} alt='cross' height="24px" width="24px"></img>
                         </div>
-                        <div className="menu-container-item" onClick={()=>{navigate("/disinfectants"); closeMenu(); }}>Disinfectants</div>
+                        <div className="menu-container-item" onClick={() => { navigate("/disinfectants"); closeMenu(); }}>Disinfectants</div>
                         <div className="menu-container-item">Cosmetics</div>
                         <div className="menu-container-item">Food Items</div>
                         <div className="menu-container-item">About</div>
